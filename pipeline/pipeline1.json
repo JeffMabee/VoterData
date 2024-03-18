@@ -83,7 +83,7 @@
 					"scripts": [
 						{
 							"type": "NonQuery",
-							"text": "CREATE CLUSTERED INDEX IX_SOSID on wrkRawVoterData(SOSIDNUM)"
+							"text": "\r\nALTER TABLE wrkRawVoterData\r\nALTER COLUMN SOSIDNUM varchar(30)\r\n\r\nCREATE CLUSTERED INDEX IX_SOSID on wrkRawVoterData(SOSIDNUM)"
 						}
 					],
 					"scriptBlockExecutionTimeout": "02:00:00"
