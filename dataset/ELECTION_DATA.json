@@ -1,0 +1,452 @@
+{
+	"name": "ELECTION_DATA",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "VoterStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "ELECTTION_DATA.csv",
+				"container": "datafiles"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "LASTN",
+				"type": "String"
+			},
+			{
+				"name": "FIRSTN",
+				"type": "String"
+			},
+			{
+				"name": "MIDDLEN",
+				"type": "String"
+			},
+			{
+				"name": "PREFIXN",
+				"type": "String"
+			},
+			{
+				"name": "SUFFIXN",
+				"type": "String"
+			},
+			{
+				"name": "CNTYIDNUM",
+				"type": "String"
+			},
+			{
+				"name": "SOSIDNUM",
+				"type": "String"
+			},
+			{
+				"name": "STNUM",
+				"type": "String"
+			},
+			{
+				"name": "STDIR",
+				"type": "String"
+			},
+			{
+				"name": "STNAME",
+				"type": "String"
+			},
+			{
+				"name": "APT",
+				"type": "String"
+			},
+			{
+				"name": "CITY",
+				"type": "String"
+			},
+			{
+				"name": "ZIP",
+				"type": "String"
+			},
+			{
+				"name": "MADDR1",
+				"type": "String"
+			},
+			{
+				"name": "MADDR2",
+				"type": "String"
+			},
+			{
+				"name": "MCITY",
+				"type": "String"
+			},
+			{
+				"name": "MSTATE",
+				"type": "String"
+			},
+			{
+				"name": "MZIP",
+				"type": "String"
+			},
+			{
+				"name": "MCOUNTRY",
+				"type": "String"
+			},
+			{
+				"name": "REGDATE",
+				"type": "String"
+			},
+			{
+				"name": "BIRTHYEAR",
+				"type": "String"
+			},
+			{
+				"name": "VOTERUPDT",
+				"type": "String"
+			},
+			{
+				"name": "VOTERSTAT",
+				"type": "String"
+			},
+			{
+				"name": "PARTYAFFIL",
+				"type": "String"
+			},
+			{
+				"name": "LASTVOTE",
+				"type": "String"
+			},
+			{
+				"name": "PRSID",
+				"type": "String"
+			},
+			{
+				"name": "PRECNAME",
+				"type": "String"
+			},
+			{
+				"name": "20231107G",
+				"type": "String"
+			},
+			{
+				"name": "20231107G_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20230808S",
+				"type": "String"
+			},
+			{
+				"name": "20230808S_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20230502S",
+				"type": "String"
+			},
+			{
+				"name": "20230502S_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20221108G",
+				"type": "String"
+			},
+			{
+				"name": "20221108G_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20220802P",
+				"type": "String"
+			},
+			{
+				"name": "20220802P_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20220503P",
+				"type": "String"
+			},
+			{
+				"name": "20220503P_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20211102G",
+				"type": "String"
+			},
+			{
+				"name": "20211102G_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20210504S",
+				"type": "String"
+			},
+			{
+				"name": "20210504S_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20201103G",
+				"type": "String"
+			},
+			{
+				"name": "20201103G_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20200317P",
+				"type": "String"
+			},
+			{
+				"name": "20200317P_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20191105G",
+				"type": "String"
+			},
+			{
+				"name": "20191105G_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20190507P",
+				"type": "String"
+			},
+			{
+				"name": "20190507P_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20181106G",
+				"type": "String"
+			},
+			{
+				"name": "20181106G_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20180807S",
+				"type": "String"
+			},
+			{
+				"name": "20180807S_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20180508P",
+				"type": "String"
+			},
+			{
+				"name": "20180508P_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20171107G",
+				"type": "String"
+			},
+			{
+				"name": "20171107G_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20170502S",
+				"type": "String"
+			},
+			{
+				"name": "20170502S_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20161108G",
+				"type": "String"
+			},
+			{
+				"name": "20161108G_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20160802S",
+				"type": "String"
+			},
+			{
+				"name": "20160802S_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20160315P",
+				"type": "String"
+			},
+			{
+				"name": "20160315P_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20151103G",
+				"type": "String"
+			},
+			{
+				"name": "20151103G_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20150505S",
+				"type": "String"
+			},
+			{
+				"name": "20150505S_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20141104G",
+				"type": "String"
+			},
+			{
+				"name": "20141104G_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20140506P",
+				"type": "String"
+			},
+			{
+				"name": "20140506P_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20131105G",
+				"type": "String"
+			},
+			{
+				"name": "20131105G_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20130507S",
+				"type": "String"
+			},
+			{
+				"name": "20130507S_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20130205S",
+				"type": "String"
+			},
+			{
+				"name": "20130205S_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20121106G",
+				"type": "String"
+			},
+			{
+				"name": "20121106G_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20120807S",
+				"type": "String"
+			},
+			{
+				"name": "20120807S_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20120306P",
+				"type": "String"
+			},
+			{
+				"name": "20120306P_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20111108G",
+				"type": "String"
+			},
+			{
+				"name": "20111108G_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20110503S",
+				"type": "String"
+			},
+			{
+				"name": "20110503S_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20101102G",
+				"type": "String"
+			},
+			{
+				"name": "20101102G_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20100504P",
+				"type": "String"
+			},
+			{
+				"name": "20100504P_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20100202S",
+				"type": "String"
+			},
+			{
+				"name": "20100202S_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20091103G",
+				"type": "String"
+			},
+			{
+				"name": "20091103G_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20090804S",
+				"type": "String"
+			},
+			{
+				"name": "20090804S_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20090505S",
+				"type": "String"
+			},
+			{
+				"name": "20090505S_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20081104G",
+				"type": "String"
+			},
+			{
+				"name": "20081104G_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "20080805S",
+				"type": "String"
+			},
+			{
+				"name": "20080805S_TYPE",
+				"type": "String"
+			}
+		]
+	}
+}

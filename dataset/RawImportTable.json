@@ -1,0 +1,22 @@
+{
+	"name": "RawImportTable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "VoterDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ID",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "tblDUMMYTable"
+		}
+	}
+}
