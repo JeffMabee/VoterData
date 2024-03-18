@@ -55,6 +55,39 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Add Index TO Raw Table",
+				"type": "Script",
+				"dependsOn": [
+					{
+						"activity": "Import Raw Data",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"linkedServiceName": {
+					"referenceName": "VoterDatabase",
+					"type": "LinkedServiceReference"
+				},
+				"typeProperties": {
+					"scripts": [
+						{
+							"type": "NonQuery",
+							"text": "CREATE CLUSTERED INDEX IX_SOSID on wrkRawVoterData(SOSIDNUM)"
+						}
+					],
+					"scriptBlockExecutionTimeout": "02:00:00"
+				}
 			}
 		],
 		"annotations": []
