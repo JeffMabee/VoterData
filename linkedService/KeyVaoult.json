@@ -1,0 +1,10 @@
+{
+	"name": "KeyVaoult",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://VoterKeys.vault.azure.net/"
+		}
+	}
+}
