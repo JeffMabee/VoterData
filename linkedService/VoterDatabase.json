@@ -1,0 +1,17 @@
+{
+	"name": "VoterDatabase",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "KeyVaoult",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "VoterDBConn"
+			}
+		}
+	}
+}
