@@ -31,6 +31,9 @@
 			"transformations": [
 				{
 					"name": "ForUpdate"
+				},
+				{
+					"name": "AlterRow1"
 				}
 			],
 			"scriptLines": [
@@ -118,7 +121,8 @@
 				"RawVoterData, tblVoterData exists(RawVoterData@SOSIDNUM==tblVoterData@SOSIDNUM &&(RawVoterData@LASTN!=tblVoterData@LASTN || RawVoterData@STNUM != tblVoterData@STNUM || tblVoterData@STNAME != tblVoterData@STNAME || RawVoterData@CITY != tblVoterData@CITY),",
 				"     negate:false,",
 				"     broadcast: 'auto')~> ForUpdate",
-				"ForUpdate sink(allowSchemaDrift: true,",
+				"ForUpdate alterRow() ~> AlterRow1",
+				"AlterRow1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
 				"          VOTERID as long,",
