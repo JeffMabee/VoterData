@@ -16,8 +16,11 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "Load Voter Table",
-						"type": "DataFlowReference"
+						"referenceName": "UpdateVoterData",
+						"type": "DataFlowReference",
+						"parameters": {
+							"CountyID": "2"
+						}
 					},
 					"compute": {
 						"coreCount": 8,
