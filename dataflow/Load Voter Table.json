@@ -34,6 +34,9 @@
 				}
 			],
 			"scriptLines": [
+				"parameters{",
+				"     CountyID as integer (2)",
+				"}",
 				"source(output(",
 				"          LASTN as string,",
 				"          FIRSTN as string,",
@@ -69,7 +72,11 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     isolationLevel: 'READ_UNCOMMITTED',",
-				"     format: 'table') ~> wrkRawVoterData",
+				"     inputs:['@CountyID' -> ($CountyID)],",
+				"     procedureName: 'spS_GetRawVoterDataInput',",
+				"     schemaName: 'dbo',",
+				"     resultSet: true,",
+				"     format: 'procedure') ~> wrkRawVoterData",
 				"source(output(",
 				"          VOTERID as long,",
 				"          LASTN as string,",
