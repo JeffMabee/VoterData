@@ -1,0 +1,156 @@
+{
+	"name": "tblVoters",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "VoterDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "VOTERID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "LASTN",
+				"type": "varchar"
+			},
+			{
+				"name": "FIRSTN",
+				"type": "varchar"
+			},
+			{
+				"name": "MIDDLEN",
+				"type": "varchar"
+			},
+			{
+				"name": "PREFIXN",
+				"type": "varchar"
+			},
+			{
+				"name": "SUFFIXN",
+				"type": "varchar"
+			},
+			{
+				"name": "CNTYIDNUM",
+				"type": "varchar"
+			},
+			{
+				"name": "STNUM",
+				"type": "varchar"
+			},
+			{
+				"name": "STDIR",
+				"type": "varchar"
+			},
+			{
+				"name": "STNAME",
+				"type": "varchar"
+			},
+			{
+				"name": "APT",
+				"type": "varchar"
+			},
+			{
+				"name": "CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "ZIP",
+				"type": "varchar"
+			},
+			{
+				"name": "REGDATE",
+				"type": "varchar"
+			},
+			{
+				"name": "BIRTHYEAR",
+				"type": "varchar"
+			},
+			{
+				"name": "VOTERUPDT",
+				"type": "varchar"
+			},
+			{
+				"name": "VOTERSTAT",
+				"type": "varchar"
+			},
+			{
+				"name": "PARTYAFFIL",
+				"type": "varchar"
+			},
+			{
+				"name": "LASTVOTE",
+				"type": "varchar"
+			},
+			{
+				"name": "PRSID",
+				"type": "varchar"
+			},
+			{
+				"name": "Latitude",
+				"type": "decimal",
+				"precision": 9,
+				"scale": 6
+			},
+			{
+				"name": "Longitude",
+				"type": "decimal",
+				"precision": 9,
+				"scale": 6
+			},
+			{
+				"name": "Phone",
+				"type": "varchar"
+			},
+			{
+				"name": "OEA",
+				"type": "bit"
+			},
+			{
+				"name": "DTM",
+				"type": "smalldatetime",
+				"precision": 16,
+				"scale": 0
+			},
+			{
+				"name": "AltPhone",
+				"type": "varchar"
+			},
+			{
+				"name": "RouteID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PRECINCT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PRECINCT_SP",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PRECINCTID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SOSIDNUM",
+				"type": "varchar"
+			},
+			{
+				"name": "StudentFlag",
+				"type": "bit"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "tblVoters"
+		}
+	}
+}

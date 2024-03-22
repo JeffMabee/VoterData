@@ -9,9 +9,432 @@
 		"type": "AzureSqlTable",
 		"schema": [
 			{
-				"name": "ID",
-				"type": "int",
-				"precision": 10
+				"name": "LASTN",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FIRSTN",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MIDDLEN",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PREFIXN",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SUFFIXN",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CNTYIDNUM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SOSIDNUM",
+				"type": "varchar"
+			},
+			{
+				"name": "STNUM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "STDIR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "STNAME",
+				"type": "nvarchar"
+			},
+			{
+				"name": "APT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CITY",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ZIP",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MADDR1",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MADDR2",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MCITY",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MSTATE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MZIP",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MCOUNTRY",
+				"type": "nvarchar"
+			},
+			{
+				"name": "REGDATE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BIRTHYEAR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "VOTERUPDT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "VOTERSTAT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PARTYAFFIL",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LASTVOTE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PRSID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PRECNAME",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20231107G",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20231107G_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20230808S",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20230808S_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20230502S",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20230502S_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20221108G",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20221108G_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20220802P",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20220802P_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20220503P",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20220503P_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20211102G",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20211102G_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20210504S",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20210504S_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20201103G",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20201103G_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20200317P",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20200317P_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20191105G",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20191105G_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20190507P",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20190507P_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20181106G",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20181106G_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20180807S",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20180807S_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20180508P",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20180508P_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20171107G",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20171107G_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20170502S",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20170502S_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20161108G",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20161108G_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20160802S",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20160802S_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20160315P",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20160315P_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20151103G",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20151103G_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20150505S",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20150505S_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20141104G",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20141104G_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20140506P",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20140506P_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20131105G",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20131105G_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20130507S",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20130507S_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20130205S",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20130205S_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20121106G",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20121106G_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20120807S",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20120807S_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20120306P",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20120306P_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20111108G",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20111108G_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20110503S",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20110503S_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20101102G",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20101102G_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20100504P",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20100504P_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20100202S",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20100202S_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20091103G",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20091103G_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20090804S",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20090804S_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20090505S",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20090505S_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20081104G",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20081104G_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20080805S",
+				"type": "nvarchar"
+			},
+			{
+				"name": "20080805S_TYPE",
+				"type": "nvarchar"
 			}
 		],
 		"typeProperties": {
