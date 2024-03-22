@@ -1,0 +1,145 @@
+{
+	"name": "RawTableQuery",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "VoterDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "LASTN",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FIRSTN",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MIDDLEN",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PREFIXN",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SUFFIXN",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CNTYIDNUM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "STNUM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "STDIR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "STNAME",
+				"type": "nvarchar"
+			},
+			{
+				"name": "APT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CITY",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ZIP",
+				"type": "nvarchar"
+			},
+			{
+				"name": "REGDATE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BIRTHYEAR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "VOTERUPDT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "VOTERSTAT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PARTYAFFIL",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LASTVOTE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PRSID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Latitude",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Longitude",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PHONE",
+				"type": "varchar"
+			},
+			{
+				"name": "OEA",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "DTM",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "AltPhone",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RouteID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PRECINCT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PRECINCT_SP",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PRECINCTID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SOSIDNUM",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "vwRawVoterDataInput"
+		}
+	}
+}
