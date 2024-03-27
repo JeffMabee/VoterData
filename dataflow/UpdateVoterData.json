@@ -34,6 +34,9 @@
 				},
 				{
 					"name": "AlterRow1"
+				},
+				{
+					"name": "DC1"
 				}
 			],
 			"scriptLines": [
@@ -122,7 +125,8 @@
 				"     negate:false,",
 				"     broadcast: 'auto')~> ForUpdate",
 				"ForUpdate alterRow(updateIf(length(SOSIDNUM)>0)) ~> AlterRow1",
-				"AlterRow1 sink(allowSchemaDrift: true,",
+				"AlterRow1 derive(Latitude2 = toDouble(1000)) ~> DC1",
+				"DC1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
 				"          VOTERID as long,",
@@ -170,7 +174,8 @@
 				"     mapColumn(",
 				"          LASTN,",
 				"          SOSIDNUM,",
-				"          FIRSTN",
+				"          FIRSTN,",
+				"          Latitude = Latitude2",
 				"     )) ~> sink1"
 			]
 		}
