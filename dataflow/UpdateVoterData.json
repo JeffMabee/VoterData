@@ -169,7 +169,8 @@
 				"     errorHandlingOption: 'stopOnFirstError',",
 				"     mapColumn(",
 				"          LASTN,",
-				"          SOSIDNUM",
+				"          SOSIDNUM,",
+				"          FIRSTN",
 				"     )) ~> sink1"
 			]
 		}
