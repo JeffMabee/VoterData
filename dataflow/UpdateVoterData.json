@@ -168,7 +168,8 @@
 				"     skipDuplicateMapOutputs: true,",
 				"     errorHandlingOption: 'stopOnFirstError',",
 				"     mapColumn(",
-				"          LASTN",
+				"          LASTN,",
+				"          SOSIDNUM",
 				"     )) ~> sink1"
 			]
 		}
