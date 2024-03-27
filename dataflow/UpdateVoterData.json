@@ -125,7 +125,7 @@
 				"     negate:false,",
 				"     broadcast: 'auto')~> ForUpdate",
 				"ForUpdate alterRow(updateIf(length(SOSIDNUM)>0)) ~> AlterRow1",
-				"AlterRow1 derive(Latitude2 = toDouble(1000)) ~> DC1",
+				"AlterRow1 derive(Latitude = toDouble(Latitude * 0) - 9999) ~> DC1",
 				"DC1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
@@ -175,7 +175,7 @@
 				"          LASTN,",
 				"          SOSIDNUM,",
 				"          FIRSTN,",
-				"          Latitude = Latitude2",
+				"          Latitude",
 				"     )) ~> sink1"
 			]
 		}
