@@ -178,7 +178,13 @@
 				"          SOSIDNUM,",
 				"          FIRSTN,",
 				"          RouteID = NOROUTE,",
-				"          Latitude = NEWLAT",
+				"          Latitude = NEWLAT,",
+				"          STNUM,",
+				"          STDIR,",
+				"          STNAME,",
+				"          CITY,",
+				"          ZIP,",
+				"          Longitude = NEWLAT",
 				"     )) ~> sink1"
 			]
 		}
