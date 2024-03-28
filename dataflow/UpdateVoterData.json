@@ -176,9 +176,7 @@
 				"     mapColumn(",
 				"          LASTN,",
 				"          SOSIDNUM,",
-				"          FIRSTN,",
-				"          Latitude = NEWLAT,",
-				"          RouteID = NOROUTE",
+				"          FIRSTN",
 				"     )) ~> sink1"
 			]
 		}
