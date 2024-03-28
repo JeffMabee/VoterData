@@ -3,8 +3,8 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Data flow1",
-				"type": "ExecuteDataFlow",
+				"name": "Get New Precincts",
+				"type": "Script",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -14,23 +14,27 @@
 					"secureInput": false
 				},
 				"userProperties": [],
+				"linkedServiceName": {
+					"referenceName": "VoterDatabase",
+					"type": "LinkedServiceReference"
+				},
 				"typeProperties": {
-					"dataflow": {
-						"referenceName": "UpdateVoterData_NO_DP",
-						"type": "DataFlowReference",
-						"parameters": {
-							"CountyID": "2"
+					"scripts": [
+						{
+							"type": "Query",
+							"text": ";WITH CTE as (\nselect distinct prsid PRECINCT\nfrom wrkRawVoterData)\n\nSELECT COUNT(*) Recs\nfrom CTE t1 \nLEFT JOIN tblPrecincts t2 on t1.PRECINCT = t2.PRSID-- and t1.PRECINCT_SP = t2.PRECINCT_SP\nWHERE t2.PRECINCT IS NULL\n"
 						}
-					},
-					"compute": {
-						"coreCount": 8,
-						"computeType": "General"
-					},
-					"traceLevel": "Fine",
-					"runConcurrently": true
+					],
+					"scriptBlockExecutionTimeout": "02:00:00"
 				}
 			}
 		],
+		"variables": {
+			"PREC_COUNT": {
+				"type": "Integer",
+				"defaultValue": 0
+			}
+		},
 		"annotations": []
 	}
 }

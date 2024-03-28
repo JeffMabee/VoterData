@@ -287,6 +287,12 @@
 				"defaultValue": 2
 			}
 		},
+		"variables": {
+			"PREC_COUNT": {
+				"type": "Integer",
+				"defaultValue": 0
+			}
+		},
 		"annotations": []
 	}
 }
