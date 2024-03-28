@@ -47,7 +47,7 @@
 				"typeProperties": {
 					"variableName": "PREC_COUNT",
 					"value": {
-						"value": "@activity('Get New Precincts').output.firstRow.Recs",
+						"value": "@activity('Get New Precincts').output.resultSets[0].rows.Recs",
 						"type": "Expression"
 					}
 				}
