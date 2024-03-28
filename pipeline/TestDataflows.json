@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "UpdateVoterData",
+						"referenceName": "UpdateVoterData_NO_DP",
 						"type": "DataFlowReference",
 						"parameters": {
 							"CountyID": "2"
@@ -26,7 +26,8 @@
 						"coreCount": 8,
 						"computeType": "General"
 					},
-					"traceLevel": "Fine"
+					"traceLevel": "Fine",
+					"runConcurrently": true
 				}
 			}
 		],
