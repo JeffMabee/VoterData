@@ -371,8 +371,6 @@
 			{
 				"name": "Purge Old Voters",
 				"type": "SqlServerStoredProcedure",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Add Voter History",
