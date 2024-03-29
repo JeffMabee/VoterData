@@ -367,6 +367,42 @@
 						}
 					]
 				}
+			},
+			{
+				"name": "Purge Old Voters",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Add Voter History",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[spD_ETL_PurgeOldVoters]",
+					"storedProcedureParameters": {
+						"CountyID": {
+							"value": {
+								"value": "@pipeline().parameters.CountyID",
+								"type": "Expression"
+							},
+							"type": "Int32"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "VoterDatabase",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"parameters": {
