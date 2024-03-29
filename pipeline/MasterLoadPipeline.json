@@ -209,7 +209,10 @@
 						"referenceName": "Load Voter Table",
 						"type": "DataFlowReference",
 						"parameters": {
-							"CountyID": "2"
+							"CountyID": {
+								"value": "@pipeline().parameters.CountyID",
+								"type": "Expression"
+							}
 						}
 					},
 					"compute": {
