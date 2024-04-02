@@ -1,0 +1,16 @@
+{
+	"name": "RawFranklinTable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "VoterDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "rawVoter_Franklin"
+		}
+	}
+}
