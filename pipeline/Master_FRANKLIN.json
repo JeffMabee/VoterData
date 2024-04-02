@@ -121,8 +121,50 @@
 					],
 					"scriptBlockExecutionTimeout": "02:00:00"
 				}
+			},
+			{
+				"name": "Build Update Table",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Add Index to Table",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[spI_CreateWorkingVotersToBeUpdated_REG]",
+					"storedProcedureParameters": {
+						"CountyID": {
+							"value": {
+								"value": "@pipeline().parameters.CountyID",
+								"type": "Expression"
+							},
+							"type": "Int32"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "VoterDatabase",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
+		"parameters": {
+			"CountyID": {
+				"type": "int",
+				"defaultValue": 1
+			}
+		},
 		"annotations": []
 	}
 }
