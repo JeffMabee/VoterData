@@ -88,6 +88,39 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Add Index to Table",
+				"type": "Script",
+				"dependsOn": [
+					{
+						"activity": "Load Raw FRANKLIN data",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"linkedServiceName": {
+					"referenceName": "VoterDatabase",
+					"type": "LinkedServiceReference"
+				},
+				"typeProperties": {
+					"scripts": [
+						{
+							"type": "NonQuery",
+							"text": "CREATE CLUSTERED INDEX IX_P on rawVoter_Franklin([STATE ID])"
+						}
+					],
+					"scriptBlockExecutionTimeout": "02:00:00"
+				}
 			}
 		],
 		"annotations": []
