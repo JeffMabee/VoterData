@@ -1,0 +1,155 @@
+{
+	"name": "RawFranklinTableQuery",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "VoterDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "LASTN",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FIRSTN",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MIDDLEN",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PREFIXN",
+				"type": "varchar"
+			},
+			{
+				"name": "SUFFIXN",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CNTYIDNUM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "STNUM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "STDIR",
+				"type": "varchar"
+			},
+			{
+				"name": "STNAME",
+				"type": "nvarchar"
+			},
+			{
+				"name": "APT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CITY",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ZIP",
+				"type": "nvarchar"
+			},
+			{
+				"name": "REGDATE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BIRTHYEAR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "VOTERUPDT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "VOTERSTAT",
+				"type": "varchar"
+			},
+			{
+				"name": "PARTYAFFIL",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LASTVOTE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PRSID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Latitude",
+				"type": "decimal",
+				"precision": 7,
+				"scale": 6
+			},
+			{
+				"name": "Longitude",
+				"type": "decimal",
+				"precision": 7,
+				"scale": 6
+			},
+			{
+				"name": "Phone",
+				"type": "varchar"
+			},
+			{
+				"name": "OEA",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "DTM",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "AltPhone",
+				"type": "varchar"
+			},
+			{
+				"name": "RouteID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PRECINCT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PRECINCT_SP",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PRECINCTID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SOSIDNUM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "StudentFlag",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "vwRawVoterDataInput_FRANKLIN"
+		}
+	}
+}
