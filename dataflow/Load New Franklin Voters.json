@@ -15,6 +15,9 @@
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
+				"parameters{",
+				"     CountyID as integer (1)",
+				"}",
 				"source(output(",
 				"          LASTN as string,",
 				"          FIRSTN as string,",
@@ -51,7 +54,8 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     isolationLevel: 'READ_UNCOMMITTED',",
-				"     procedureName: '',",
+				"     procedureName: 'spS_GetRawVoterDataInput_FRANKLIN',",
+				"     schemaName: 'dbo',",
 				"     resultSet: true,",
 				"     format: 'procedure') ~> rawData"
 			]
