@@ -10,10 +10,21 @@
 						"type": "DatasetReference"
 					},
 					"name": "rawData"
+				},
+				{
+					"dataset": {
+						"referenceName": "tblVoters",
+						"type": "DatasetReference"
+					},
+					"name": "VoterTable"
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "exists1"
+				}
+			],
 			"scriptLines": [
 				"parameters{",
 				"     CountyID as integer (1)",
@@ -54,10 +65,52 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     inputs:['@CountyID' -> ($CountyID)],",
 				"     procedureName: 'spS_GetRawVoterDataInput_FRANKLIN',",
 				"     schemaName: 'dbo',",
 				"     resultSet: true,",
-				"     format: 'procedure') ~> rawData"
+				"     format: 'procedure') ~> rawData",
+				"source(output(",
+				"          VOTERID as long,",
+				"          LASTN as string,",
+				"          FIRSTN as string,",
+				"          MIDDLEN as string,",
+				"          PREFIXN as string,",
+				"          SUFFIXN as string,",
+				"          CNTYIDNUM as string,",
+				"          STNUM as string,",
+				"          STDIR as string,",
+				"          STNAME as string,",
+				"          APT as string,",
+				"          CITY as string,",
+				"          ZIP as string,",
+				"          REGDATE as string,",
+				"          BIRTHYEAR as string,",
+				"          VOTERUPDT as string,",
+				"          VOTERSTAT as string,",
+				"          PARTYAFFIL as string,",
+				"          LASTVOTE as string,",
+				"          PRSID as string,",
+				"          Latitude as decimal(9,6),",
+				"          Longitude as decimal(9,6),",
+				"          Phone as string,",
+				"          OEA as boolean,",
+				"          DTM as timestamp,",
+				"          AltPhone as string,",
+				"          RouteID as integer,",
+				"          PRECINCT as integer,",
+				"          PRECINCT_SP as integer,",
+				"          PRECINCTID as integer,",
+				"          SOSIDNUM as string,",
+				"          StudentFlag as boolean",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> VoterTable",
+				"rawData, VoterTable exists(rawData@SOSIDNUM == VoterTable@SOSIDNUM,",
+				"     negate:true,",
+				"     broadcast: 'auto')~> exists1"
 			]
 		}
 	}
