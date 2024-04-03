@@ -23,6 +23,9 @@
 			"transformations": [
 				{
 					"name": "exists1"
+				},
+				{
+					"name": "AfterUpdate"
 				}
 			],
 			"scriptLines": [
@@ -116,7 +119,8 @@
 				" source1@CITY != VoterData@CITY   \r",
 				"),",
 				"     negate:false,",
-				"     broadcast: 'auto')~> exists1"
+				"     broadcast: 'auto')~> exists1",
+				"exists1 alterRow(updateIf(length(SOSIDNUM)>0)) ~> AfterUpdate"
 			]
 		}
 	}
