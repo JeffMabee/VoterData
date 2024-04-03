@@ -184,12 +184,51 @@
 					"referenceName": "VoterDatabase",
 					"type": "LinkedServiceReference"
 				}
+			},
+			{
+				"name": "Check Precincts",
+				"type": "Script",
+				"dependsOn": [
+					{
+						"activity": "Add New Elections",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"linkedServiceName": {
+					"referenceName": "VoterDatabase",
+					"type": "LinkedServiceReference"
+				},
+				"typeProperties": {
+					"scripts": [
+						{
+							"type": "Query",
+							"text": ";WITH CTE AS\n(\nSELECT DISTINCT PRECINCT,[PRECINCT SPLIT],[PRECINCT NAME WITH SPLIT],[CITY OR VILLAGE],SCHOOL\nfrom rawVoter_Franklin t1\n)\nSELECT COUNT(*) Recs\nfrom CTE t1 \nLEFT JOIN tblPrecincts t2 on t1.PRECINCT = t2.PRECINCT and t1.[PRECINCT SPLIT] = t2.PRECINCT_SP\nWHERE t2.PRECINCT IS NULL\n"
+						}
+					],
+					"scriptBlockExecutionTimeout": "02:00:00"
+				}
 			}
 		],
 		"parameters": {
 			"CountyID": {
 				"type": "int",
 				"defaultValue": 1
+			}
+		},
+		"variables": {
+			"PREC_COUNT": {
+				"type": "Integer",
+				"defaultValue": 0
 			}
 		},
 		"annotations": []
