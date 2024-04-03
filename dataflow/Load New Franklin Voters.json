@@ -3,11 +3,57 @@
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
-			"sources": [],
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "RawFranklinTableQuery",
+						"type": "DatasetReference"
+					},
+					"name": "rawData"
+				}
+			],
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
-				""
+				"source(output(",
+				"          LASTN as string,",
+				"          FIRSTN as string,",
+				"          MIDDLEN as string,",
+				"          PREFIXN as string,",
+				"          SUFFIXN as string,",
+				"          CNTYIDNUM as string,",
+				"          STNUM as string,",
+				"          STDIR as string,",
+				"          STNAME as string,",
+				"          APT as string,",
+				"          CITY as string,",
+				"          ZIP as string,",
+				"          REGDATE as string,",
+				"          BIRTHYEAR as string,",
+				"          VOTERUPDT as integer,",
+				"          VOTERSTAT as string,",
+				"          PARTYAFFIL as string,",
+				"          LASTVOTE as integer,",
+				"          PRSID as integer,",
+				"          Latitude as decimal(7,6),",
+				"          Longitude as decimal(7,6),",
+				"          Phone as string,",
+				"          OEA as integer,",
+				"          DTM as timestamp,",
+				"          AltPhone as string,",
+				"          RouteID as integer,",
+				"          PRECINCT as integer,",
+				"          PRECINCT_SP as string,",
+				"          PRECINCTID as integer,",
+				"          SOSIDNUM as string,",
+				"          StudentFlag as integer",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     procedureName: '',",
+				"     resultSet: true,",
+				"     format: 'procedure') ~> rawData"
 			]
 		}
 	}
