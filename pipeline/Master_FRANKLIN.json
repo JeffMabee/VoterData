@@ -217,6 +217,30 @@
 					],
 					"scriptBlockExecutionTimeout": "02:00:00"
 				}
+			},
+			{
+				"name": "GetProcCount",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Check Precincts",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "PREC_COUNT",
+					"value": {
+						"value": "@activity('Check Precincts').output.resultSets[0].rows[0].Recs\r\n",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"parameters": {
