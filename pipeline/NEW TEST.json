@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "Load New Franklin Voters",
+						"referenceName": "UpdateFranklinVoterData",
 						"type": "DataFlowReference",
 						"parameters": {
 							"CountyID": "1"
