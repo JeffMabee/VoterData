@@ -1,0 +1,123 @@
+{
+	"name": "UpdateFranklinVoterData",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "RawFranklinTableQuery",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				},
+				{
+					"dataset": {
+						"referenceName": "tblVoters",
+						"type": "DatasetReference"
+					},
+					"name": "VoterData"
+				}
+			],
+			"sinks": [],
+			"transformations": [
+				{
+					"name": "exists1"
+				}
+			],
+			"scriptLines": [
+				"parameters{",
+				"     CountyID as integer (1)",
+				"}",
+				"source(output(",
+				"          LASTN as string,",
+				"          FIRSTN as string,",
+				"          MIDDLEN as string,",
+				"          PREFIXN as string,",
+				"          SUFFIXN as string,",
+				"          CNTYIDNUM as string,",
+				"          STNUM as string,",
+				"          STDIR as string,",
+				"          STNAME as string,",
+				"          APT as string,",
+				"          CITY as string,",
+				"          ZIP as string,",
+				"          REGDATE as string,",
+				"          BIRTHYEAR as string,",
+				"          VOTERUPDT as integer,",
+				"          VOTERSTAT as string,",
+				"          PARTYAFFIL as string,",
+				"          LASTVOTE as integer,",
+				"          PRSID as integer,",
+				"          Latitude as decimal(7,6),",
+				"          Longitude as decimal(7,6),",
+				"          Phone as string,",
+				"          OEA as integer,",
+				"          DTM as timestamp,",
+				"          AltPhone as string,",
+				"          RouteID as integer,",
+				"          PRECINCT as integer,",
+				"          PRECINCT_SP as string,",
+				"          PRECINCTID as integer,",
+				"          SOSIDNUM as string,",
+				"          StudentFlag as integer",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     inputs:['@CountyID' -> ($CountyID)],",
+				"     procedureName: 'spS_GetRawVoterDataInput_FRANKLIN',",
+				"     schemaName: 'dbo',",
+				"     resultSet: true,",
+				"     format: 'procedure') ~> source1",
+				"source(output(",
+				"          VOTERID as long,",
+				"          LASTN as string,",
+				"          FIRSTN as string,",
+				"          MIDDLEN as string,",
+				"          PREFIXN as string,",
+				"          SUFFIXN as string,",
+				"          CNTYIDNUM as string,",
+				"          STNUM as string,",
+				"          STDIR as string,",
+				"          STNAME as string,",
+				"          APT as string,",
+				"          CITY as string,",
+				"          ZIP as string,",
+				"          REGDATE as string,",
+				"          BIRTHYEAR as string,",
+				"          VOTERUPDT as string,",
+				"          VOTERSTAT as string,",
+				"          PARTYAFFIL as string,",
+				"          LASTVOTE as string,",
+				"          PRSID as string,",
+				"          Latitude as decimal(9,6),",
+				"          Longitude as decimal(9,6),",
+				"          Phone as string,",
+				"          OEA as boolean,",
+				"          DTM as timestamp,",
+				"          AltPhone as string,",
+				"          RouteID as integer,",
+				"          PRECINCT as integer,",
+				"          PRECINCT_SP as integer,",
+				"          PRECINCTID as integer,",
+				"          SOSIDNUM as string,",
+				"          StudentFlag as boolean",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> VoterData",
+				"source1, VoterData exists(source1@SOSIDNUM == VoterData@SOSIDNUM &&\r",
+				"(\r",
+				"source1@LASTN != VoterData@LASTN ||\r",
+				"source1@STNAME !=VoterData@STNAME ||\r",
+				"VoterData@STNUM != source1@STNUM ||\r",
+				" source1@CITY != VoterData@CITY   \r",
+				"),",
+				"     negate:false,",
+				"     broadcast: 'auto')~> exists1"
+			]
+		}
+	}
+}
